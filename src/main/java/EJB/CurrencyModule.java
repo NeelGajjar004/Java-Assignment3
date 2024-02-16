@@ -66,12 +66,6 @@ public class CurrencyModule implements CurrencyModuleLocal {
         return rs;
     }
 
-    
-       
-    
-
-    // Add business logic below. (Right-click in editor and choose
-    // "Insert Code > Add Business Method")
 
     @Override
     public double CalculateConvertAMT(String fcode, String tcode, double amt){
