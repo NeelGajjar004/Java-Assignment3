@@ -24,6 +24,7 @@ public interface EmpEJBModuleLocal {
     void removeDepartment(Integer deptID);
     
     Collection<Department> getAllDepartment();   
+    Collection<Department> getDepartmentByDeptID(Integer deptID);   
     Collection<Department> getDepartmentByDeptName(String deptName);   
     
     //Employee[one(Department) to many(Employees) Relationships]

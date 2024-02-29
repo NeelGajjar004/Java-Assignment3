@@ -49,6 +49,11 @@ public class EmpEJBModule implements EmpEJBModuleLocal {
     }
 
     @Override
+    public Collection<Department> getDepartmentByDeptID(Integer deptID) {
+        return em.createNamedQuery("Department.findByDeptId").setParameter("deptID", deptID).getResultList();
+    }
+    
+    @Override
     public Collection<Department> getDepartmentByDeptName(String deptName) {
         return em.createNamedQuery("Department.findByDeptName").setParameter("deptName", deptName).getResultList();
     }

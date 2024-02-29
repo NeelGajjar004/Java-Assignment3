@@ -7,6 +7,7 @@ package Servlet;
 import EJB.EmpEJBModuleLocal;
 import Entity.Department;
 import Entity.Employee;
+import Entity.Project;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Collection;
@@ -43,24 +44,47 @@ public class EmployeeServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet EmployeeServlet</title>");            
+            out.println("<title>Neel Employee Servlet</title>");            
             out.println("</head>");
             out.println("<body>");
-//            Collection<Employee> emps = eeml.getAllEmployee();
+            out.println("<h1>15 - Neel Gajjar | Assignment-3 : Question 3</h1>");
+ 
             Collection<Department> depts = eeml.getAllDepartment();
-            out.println("<h2>Department</h2><br>");
+            Collection<Employee> emps = eeml.getAllEmployee();
+            Collection<Project> projs = eeml.getAllProject();
+            
+            out.println("<h2>Department</h2>");
             out.println("<table border=2><tr><th>ID</th><th>Name</th></tr>");
             
             for(Department dept : depts)
             {
-                
                 out.println("<tr><td>"+dept.getDeptId()+"</td><td>"+dept.getDeptName()+"</td></tr>");
             }
             
             out.println("</table>");
+            out.println("<br/>");
             
+            out.println("<h2>Employee</h2>");
+            out.println("<table border=2><tr><th>ID</th><th>Name</th><th>Salary</th></tr>");
             
-            out.println("<h1>Servlet EmployeeServlet at " + request.getContextPath() + "</h1>");
+            for(Employee emp : emps)
+            {
+                out.println("<tr><td>"+emp.getEmpID()+"</td><td>"+emp.getEmpName()+"</td><td>"+emp.getEmpSalary()+"</td></tr>");
+            }
+            
+            out.println("</table>");
+            out.println("<br/>");
+            
+            out.println("<h2>Project</h2>");
+            out.println("<table border=2><tr><th>ID</th><th>Name</th><th>Deadline</th><th>Cost</th></tr>");
+            
+            for(Project proj : projs)
+            {
+                out.println("<tr><td>"+proj.getProjID()+"</td><td>"+proj.getProjName()+"</td><td>"+proj.getPorjDeadline()+"</td><td>"+proj.getProjCost()+"</td></tr>");
+            }
+            
+            out.println("</table>");
+                        
             out.println("</body>");
             out.println("</html>");
         }
